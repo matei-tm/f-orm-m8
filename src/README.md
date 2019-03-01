@@ -4,8 +4,8 @@ Flutter package for ORM annotations.
 
 ## Introduction
 
-The package add definitions for a set of types that could be combined to expand ORM capabilities from annotated code.
-Current version, define three types:
+The package adds definitions for a set of types that could be combined to expand ORM capabilities in the annotated code.
+The current version, defines three types:
 
 - ColumnMetadata
 - DataTable
@@ -22,21 +22,36 @@ The ColumnMetadata describes the basic options for a column definition:
 - AutoIncrement
 - Indexed
 
+The options may be combined in various ways using | operator
+
+```dart
+@DataColumn("id", ColumnMetadata.PrimaryKey | ColumnMetadata.Unique | ColumnMetadata.AutoIncrement)
+```
+
 ### DataTable
 
-DataTable describe the required name for the table
-
-### DataColumn
-
-DataColumn describe the required name for the column and a bit mask for required ColumnMetadata's
-
-## Usage
-
+DataTable describes the required name for the table
 
 ```dart
 @DataTable("a01_tests")
 class A01Test implements DbAccountRelatedEntity {
-  @DataColumn("id", ColumnMetadata.PrimaryKey & ColumnMetadata.Unique & ColumnMetadata.AutoIncrement)
+```
+
+### DataColumn
+
+DataColumn describes the required name for the column in conjunction  with a bit mask for required ColumnMetadata's
+
+```dart
+  @DataColumn("id", ColumnMetadata.PrimaryKey | ColumnMetadata.Unique | ColumnMetadata.AutoIncrement)
+  int _id;
+```
+
+## Usage
+
+```dart
+@DataTable("a01_tests")
+class A01Test implements DbAccountRelatedEntity {
+  @DataColumn("id", ColumnMetadata.PrimaryKey | ColumnMetadata.Unique | ColumnMetadata.AutoIncrement)
   int _id;
 
   @DataColumn("account_id")

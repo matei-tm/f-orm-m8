@@ -3,7 +3,7 @@ library flutter_orm_m8;
 class ColumnMetadata {
   static const Ignore = 0;
   static const PrimaryKey = 1;
-  static const Unique = 10;
+  static const Unique = 2;
   static const NotNull = 4;
   static const AutoIncrement = 8;
   static const Indexed = 16;

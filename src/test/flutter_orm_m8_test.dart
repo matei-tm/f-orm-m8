@@ -11,5 +11,6 @@ void main() {
     expect(ColumnMetadata.NotNull, 4);
     expect(ColumnMetadata.AutoIncrement, 8);
     expect(ColumnMetadata.Indexed, 16);
+    expect(ColumnMetadata.PrimaryKey | ColumnMetadata.Unique | ColumnMetadata.AutoIncrement, 11);
   });
 }
