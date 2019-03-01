@@ -1,3 +1,15 @@
-## [0.0.1] - TODO: Add release date.
+## [0.0.1] - 2018-03-01
 
-* TODO: Describe initial release.
+* Basic annotations for ORM extensions
+
+### ColumnMetadata options:
+
+- Ignore
+- PrimaryKey
+- Unique
+- NotNull
+- AutoIncrement
+- Indexed
+
+### DataTable with name
+### DataColumn with name and a bit mask for required ColumnMetadata's

@@ -2,13 +2,51 @@
 
 Flutter package for ORM annotations.
 
-## Getting Started
+## Introduction
 
-This project is a starting point for a Dart
-[package](https://flutter.io/developing-packages/),
-a library module containing code that can be shared easily across
-multiple Flutter or Dart projects.
+The package add definitions for a set of types that could be combined to expand ORM capabilities from annotated code.
+Current version, define three types:
 
-For help getting started with Flutter, view our 
-[online documentation](https://flutter.io/docs), which offers tutorials, 
-samples, guidance on mobile development, and a full API reference.
+- ColumnMetadata
+- DataTable
+- DataColumn
+
+### ColumnMetadata
+
+The ColumnMetadata describes the basic options for a column definition:
+
+- Ignore
+- PrimaryKey
+- Unique
+- NotNull
+- AutoIncrement
+- Indexed
+
+### DataTable
+
+DataTable describe the required name for the table
+
+### DataColumn
+
+DataColumn describe the required name for the column and a bit mask for required ColumnMetadata's
+
+## Usage
+
+
+```dart
+@DataTable("a01_tests")
+class A01Test implements DbAccountRelatedEntity {
+  @DataColumn("id", ColumnMetadata.PrimaryKey & ColumnMetadata.Unique & ColumnMetadata.AutoIncrement)
+  int _id;
+
+  @DataColumn("account_id")
+  int _accountId;
+
+  @DataColumn("record_date")
+  int _recordDate;
+
+  @DataColumn("is_deleted")
+  int _isDeleted;
+}
+```
+
