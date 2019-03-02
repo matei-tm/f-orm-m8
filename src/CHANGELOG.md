@@ -17,3 +17,9 @@
 ## [0.0.2] - 2018-03-01
 
 * Adding some example usage
+
+## [0.0.3] - 2018-03-02
+
+* Shifting column options values with one bit
+* Enhancing documentation
+* Reorganizing example 

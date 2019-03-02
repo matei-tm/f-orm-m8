@@ -1,5 +1,5 @@
 import 'package:flutter_orm_m8/flutter_orm_m8.dart';
-import '../helpers/db_entity.dart';
+import 'helpers/db_entity.dart';
 
 @DataTable("health_issues")
 class HealthIssue implements DbAccountRelatedEntity {
