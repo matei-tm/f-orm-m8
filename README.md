@@ -1,5 +1,7 @@
 # flutter_orm_m8
 
+![GitHub release](https://img.shields.io/github/release-pre/matei-tm/flutter-orm-m8.svg) [![pub package](https://img.shields.io/pub/v/flutter_orm_m8.svg)](https://pub.dartlang.org/packages/flutter_orm_m8)
+
 Flutter package for ORM annotations.
 
 ## Introduction
