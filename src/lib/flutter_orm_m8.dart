@@ -3,7 +3,6 @@ library flutter_orm_m8;
 /// ColumnMetadata describes the basic options for
 /// a column definition
 class ColumnMetadata {
-
   /// Used to ignore mapping
   static const Ignore = 1;
 
@@ -23,10 +22,9 @@ class ColumnMetadata {
   static const Indexed = 32;
 }
 
-/// DataTable describe the 
+/// DataTable describe the
 /// generated table
 class DataTable {
-
   /// The name of the table
   final String name;
 
@@ -36,10 +34,9 @@ class DataTable {
 
 const DataTable table = const DataTable();
 
-/// DataColumn describe the 
+/// DataColumn describe the
 /// generated column
 class DataColumn {
-
   /// The name of the column
   final String name;
 
