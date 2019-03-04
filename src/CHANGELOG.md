@@ -23,3 +23,8 @@
 * Shifting column options values with one bit
 * Enhancing documentation
 * Reorganizing example 
+
+## [0.1.0] - 2018-03-03
+
+* Switching from flutter_test to test
+* Removing flutter dependencies

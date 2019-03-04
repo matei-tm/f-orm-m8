@@ -3,7 +3,7 @@ dist: xenial
 matrix:
   include:
     - name: Test
-      env: COMMAND=test
+      env: COMMAND=packages pub run test
     - name: Analyze
       env: COMMAND=analyze
 addons:
