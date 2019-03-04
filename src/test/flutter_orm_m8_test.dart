@@ -1,5 +1,4 @@
 import 'package:test/test.dart';
-
 import 'package:flutter_orm_m8/flutter_orm_m8.dart';
 
 void main() {
@@ -10,6 +9,10 @@ void main() {
     expect(ColumnMetadata.NotNull, 8);
     expect(ColumnMetadata.AutoIncrement, 16);
     expect(ColumnMetadata.Indexed, 32);
-    expect(ColumnMetadata.PrimaryKey | ColumnMetadata.Unique | ColumnMetadata.AutoIncrement, 22);
+    expect(
+        ColumnMetadata.PrimaryKey |
+            ColumnMetadata.Unique |
+            ColumnMetadata.AutoIncrement,
+        22);
   });
 }

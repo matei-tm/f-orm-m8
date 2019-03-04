@@ -3,7 +3,11 @@ import 'helpers/db_entity.dart';
 
 @DataTable("health_issues")
 class HealthIssue implements DbAccountRelatedEntity {
-  @DataColumn("id", ColumnMetadata.PrimaryKey | ColumnMetadata.Unique | ColumnMetadata.AutoIncrement)
+  @DataColumn(
+      "id",
+      ColumnMetadata.PrimaryKey |
+          ColumnMetadata.Unique |
+          ColumnMetadata.AutoIncrement)
   int _id;
 
   @DataColumn("account_id")

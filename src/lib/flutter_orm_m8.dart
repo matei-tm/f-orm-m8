@@ -32,7 +32,7 @@ class DataTable {
   const DataTable([this.name]);
 }
 
-const DataTable table = const DataTable();
+const DataTable table = DataTable();
 
 /// DataColumn describe the
 /// generated column
@@ -47,4 +47,4 @@ class DataColumn {
   const DataColumn([this.name, this.metadataLevel]);
 }
 
-const DataColumn column = const DataColumn();
+const DataColumn column = DataColumn();
