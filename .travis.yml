@@ -1,6 +1,8 @@
 # Created with package:mono_repo v1.2.1
 language: dart
 
+sudo: required
+
 jobs:
   include:
     - stage: analyzer_and_format
