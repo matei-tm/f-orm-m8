@@ -2,7 +2,6 @@
 language: dart
 
 sudo: required
-
 jobs:
   include:
     - stage: analyzer_and_format
@@ -17,47 +16,17 @@ jobs:
       dart: stable
     - stage: unit_test
       name: "SDK: stable - DIR: src - TASKS: pub run test"
-      script: ./tool/travis.sh test_0
+      script: ./tool/travis.sh test
       env: PKG="src"
       dart: stable
     - stage: unit_test
       name: "SDK: 2.0.0 - DIR: src - TASKS: pub run test"
-      script: ./tool/travis.sh test_0
+      script: ./tool/travis.sh test
       env: PKG="src"
       dart: "2.0.0"
     - stage: unit_test
       name: "SDK: dev - DIR: src - TASKS: pub run test"
-      script: ./tool/travis.sh test_0
-      env: PKG="src"
-      dart: dev
-    - stage: unit_test
-      name: "SDK: stable - DIR: src - TASKS: pub run test --run-skipped test/ensure_build_test.dart"
-      script: ./tool/travis.sh test_1
-      env: PKG="src"
-      dart: stable
-    - stage: unit_test
-      name: "SDK: 2.0.0 - DIR: src - TASKS: pub run test --run-skipped test/ensure_build_test.dart"
-      script: ./tool/travis.sh test_1
-      env: PKG="src"
-      dart: "2.0.0"
-    - stage: unit_test
-      name: "SDK: dev - DIR: src - TASKS: pub run test --run-skipped test/ensure_build_test.dart"
-      script: ./tool/travis.sh test_1
-      env: PKG="src"
-      dart: dev
-    - stage: unit_test
-      name: "SDK: stable - DIR: src - TASKS: pub run build_runner test -- -p chrome"
-      script: ./tool/travis.sh command
-      env: PKG="src"
-      dart: stable
-    - stage: unit_test
-      name: "SDK: 2.0.0 - DIR: src - TASKS: pub run build_runner test -- -p chrome"
-      script: ./tool/travis.sh command
-      env: PKG="src"
-      dart: "2.0.0"
-    - stage: unit_test
-      name: "SDK: dev - DIR: src - TASKS: pub run build_runner test -- -p chrome"
-      script: ./tool/travis.sh command
+      script: ./tool/travis.sh test
       env: PKG="src"
       dart: dev
 
@@ -74,4 +43,3 @@ branches:
 cache:
   directories:
     - "$HOME/.pub-cache"
-    - src/.dart_tool/build

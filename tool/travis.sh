@@ -19,11 +19,6 @@ EXIT_CODE=0
 while (( "$#" )); do
   TASK=$1
   case $TASK in
-  command) echo
-    echo -e '\033[1mTASK: command\033[22m'
-    echo -e 'pub run build_runner test -- -p chrome'
-    pub run build_runner test -- -p chrome || EXIT_CODE=$?
-    ;;
   dartanalyzer_0) echo
     echo -e '\033[1mTASK: dartanalyzer_0\033[22m'
     echo -e 'dartanalyzer --fatal-infos --fatal-warnings .'
@@ -39,15 +34,10 @@ while (( "$#" )); do
     echo -e 'dartfmt -n --set-exit-if-changed .'
     dartfmt -n --set-exit-if-changed . || EXIT_CODE=$?
     ;;
-  test_0) echo
-    echo -e '\033[1mTASK: test_0\033[22m'
+  test) echo
+    echo -e '\033[1mTASK: test\033[22m'
     echo -e 'pub run test'
     pub run test || EXIT_CODE=$?
-    ;;
-  test_1) echo
-    echo -e '\033[1mTASK: test_1\033[22m'
-    echo -e 'pub run test --run-skipped test/ensure_build_test.dart'
-    pub run test --run-skipped test/ensure_build_test.dart || EXIT_CODE=$?
     ;;
   *) echo -e "\033[31mNot expecting TASK '${TASK}'. Error!\033[0m"
     EXIT_CODE=1
