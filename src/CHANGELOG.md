@@ -28,3 +28,11 @@
 
 * Switching from flutter_test to test
 * Removing flutter dependencies
+
+## [0.2.0] - 2018-03-08
+
+* Adding base classes for:
+  * DbEntity
+  * DbAccountEntity
+  * DbAccountRelatedEntity
+

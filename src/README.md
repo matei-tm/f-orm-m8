@@ -7,11 +7,17 @@ Flutter package for ORM annotations.
 ## Introduction
 
 The package adds definitions for a set of types that could be combined to expand ORM capabilities in the annotated code.
-The current version, defines three types:
+The current version, defines three annotation types:
 
 - ColumnMetadata
 - DataTable
 - DataColumn
+
+In order to ease the code emitting three abstract classes are defined:
+
+- DbEntity
+- DbAccountEntity
+- DbAccountRelatedEntity
 
 ### ColumnMetadata
 
