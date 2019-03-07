@@ -1,5 +1,4 @@
 import 'package:flutter_orm_m8/flutter_orm_m8.dart';
-import 'helpers/db_entity.dart';
 
 @DataTable("health_issues")
 class HealthIssue implements DbAccountRelatedEntity {
@@ -29,6 +28,19 @@ class HealthIssue implements DbAccountRelatedEntity {
   String get description => _description;
 
   HealthIssue(this._recordDate, this._accountId, this._description);
+
+  @override
+  Map<String, dynamic> toMap() {
+    var map = Map<String, dynamic>();
+    if (_id != null) {
+      map['id'] = _id;
+    }
+    map['account_id'] = _accountId;
+    map['record_date'] = _recordDate;
+    map['is_deleted'] = _isDeleted;
+
+    return map;
+  }
 
   /* ... */
 }
