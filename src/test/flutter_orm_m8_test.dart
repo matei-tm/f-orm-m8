@@ -22,12 +22,12 @@ void main() {
 
   group('base classes definitions', () {
     test('simple entity', () {
-      DbEntity dbEntity = new I01Entity.fromMap(
+      DbEntity dbEntity = I01Entity.fromMap(
           {'id': 1, 'is_deleted': 0, 'record_date': 1552003055});
       expect(dbEntity.id, 1);
     });
     test('account', () {
-      DbAccountEntity dbEntity = new UserAccount.fromMap({
+      DbAccountEntity dbEntity = UserAccount.fromMap({
         'id': 1,
         'account_name': 'John Doe',
         'account_email': 'john.ross@the.dev',
@@ -39,7 +39,7 @@ void main() {
       expect(dbEntity.abbreviation, 'JR');
     });
     test('account related', () {
-      DbAccountRelatedEntity dbEntity = new A01Entity.fromMap({
+      DbAccountRelatedEntity dbEntity = A01Entity.fromMap({
         'id': 1,
         'is_deleted': 0,
         'account_id': 2,

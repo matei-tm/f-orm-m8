@@ -4,6 +4,13 @@
 
 Flutter package for ORM annotations.
 
+- [Flutter ORM Mate - flutter_orm_m8](#flutter-orm-mate---flutterormm8)
+  - [Introduction](#introduction)
+    - [ColumnMetadata](#columnmetadata)
+    - [DataTable](#datatable)
+    - [DataColumn](#datacolumn)
+  - [Usage](#usage)
+
 ## Introduction
 
 The package adds definitions for a set of types that could be combined to expand ORM capabilities in the annotated code.
@@ -56,6 +63,9 @@ DataColumn describes the required name for the column in conjunction  with a bit
 
 ## Usage
 
+The package can be a start for other projects that aim to develop an ORM.
+Such project is [https://github.com/matei-tm/flutter-sqlite-m8-generator](https://github.com/matei-tm/flutter-sqlite-m8-generator)
+
 ```dart
 @DataTable("a01_tests")
 class A01Test implements DbAccountRelatedEntity {
@@ -70,6 +80,18 @@ class A01Test implements DbAccountRelatedEntity {
 
   @DataColumn("is_deleted")
   int _isDeleted;
+
+  A01Test.fromMap(Map<String, dynamic> map) {
+    this._id = map['id'];
+    this._accountId = map['account_id'];    
+    this._recordDate = map['record_date'];
+    this._isDeleted = map['is_deleted'];
+  }
+
+  @override
+  A01Test getDbEntityFromMap(Map<String, dynamic> map) {
+    return A01Test.fromMap(map);
+  }  
 }
 ```
 

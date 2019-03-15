@@ -4,8 +4,8 @@ import 'package:flutter_orm_m8/flutter_orm_m8.dart';
 class UserAccount implements DbAccountEntity {
   @DataColumn(
       "id",
-      ColumnMetadata.PrimaryKey &
-          ColumnMetadata.Unique &
+      ColumnMetadata.PrimaryKey |
+          ColumnMetadata.Unique |
           ColumnMetadata.AutoIncrement)
   int _id;
 
@@ -52,7 +52,7 @@ class UserAccount implements DbAccountEntity {
 
   @override
   Map<String, dynamic> toMap() {
-    var map = new Map<String, dynamic>();
+    var map = Map<String, dynamic>();
     if (_id != null) {
       map['id'] = _id;
     }
@@ -61,5 +61,10 @@ class UserAccount implements DbAccountEntity {
     map['account_abbr'] = _abbreviation;
 
     return map;
+  }
+
+  @override
+  UserAccount getDbEntityFromMap(Map<String, dynamic> map) {
+    return UserAccount.fromMap(map);
   }
 }

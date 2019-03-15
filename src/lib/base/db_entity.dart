@@ -5,4 +5,7 @@ abstract class DbEntity {
 
   /// Converter of the instance to a Map
   Map<String, dynamic> toMap();
+
+  /// Converter of the db data map to concrete entity
+  DbEntity getDbEntityFromMap(Map<String, dynamic> map);
 }

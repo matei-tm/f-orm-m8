@@ -4,8 +4,8 @@ import 'package:flutter_orm_m8/flutter_orm_m8.dart';
 class A01Entity implements DbAccountRelatedEntity {
   @DataColumn(
       "id",
-      ColumnMetadata.PrimaryKey &
-          ColumnMetadata.Unique &
+      ColumnMetadata.PrimaryKey |
+          ColumnMetadata.Unique |
           ColumnMetadata.AutoIncrement)
   int _id;
 
@@ -43,7 +43,7 @@ class A01Entity implements DbAccountRelatedEntity {
     this._id = map['id'];
     this._accountId = map['account_id'];
     this._recordDate = map['record_date'];
-    this._isDeleted = map['isDeleted'];
+    this._isDeleted = map['is_deleted'];
 
     this._entryName = map['entry_name'];
   }
@@ -56,7 +56,7 @@ class A01Entity implements DbAccountRelatedEntity {
   String get entryName => _entryName;
 
   Map<String, dynamic> toMap() {
-    var map = new Map<String, dynamic>();
+    var map = Map<String, dynamic>();
     if (_id != null) {
       map['id'] = _id;
     }
@@ -66,5 +66,10 @@ class A01Entity implements DbAccountRelatedEntity {
 
     map['entry_name'] = _entryName;
     return map;
+  }
+
+  @override
+  A01Entity getDbEntityFromMap(Map<String, dynamic> map) {
+    return A01Entity.fromMap(map);
   }
 }

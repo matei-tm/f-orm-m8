@@ -28,7 +28,14 @@ class HealthIssue implements DbAccountRelatedEntity {
   String get description => _description;
 
   HealthIssue(this._recordDate, this._accountId, this._description);
+  HealthIssue.fromMap(Map<String, dynamic> map) {
+    this._id = map['id'];
+    this._accountId = map['account_id'];
+    this._recordDate = map['record_date'];
+    this._isDeleted = map['is_deleted'];
 
+    this._description = map['description'];
+  }
   @override
   Map<String, dynamic> toMap() {
     var map = Map<String, dynamic>();
@@ -42,5 +49,9 @@ class HealthIssue implements DbAccountRelatedEntity {
     return map;
   }
 
+  @override
+  HealthIssue getDbEntityFromMap(Map<String, dynamic> map) {
+    return HealthIssue.fromMap(map);
+  }
   /* ... */
 }

@@ -4,8 +4,8 @@ import 'package:flutter_orm_m8/flutter_orm_m8.dart';
 class I01Entity implements DbEntity {
   @DataColumn(
       "id",
-      ColumnMetadata.PrimaryKey &
-          ColumnMetadata.Unique &
+      ColumnMetadata.PrimaryKey |
+          ColumnMetadata.Unique |
           ColumnMetadata.AutoIncrement)
   int _id;
 
@@ -38,7 +38,7 @@ class I01Entity implements DbEntity {
   I01Entity.fromMap(Map<String, dynamic> map) {
     this._id = map['id'];
     this._recordDate = map['record_date'];
-    this._isDeleted = map['isDeleted'];
+    this._isDeleted = map['is_deleted'];
 
     this._entryName = map['entry_name'];
   }
@@ -50,7 +50,7 @@ class I01Entity implements DbEntity {
   String get entryName => _entryName;
 
   Map<String, dynamic> toMap() {
-    var map = new Map<String, dynamic>();
+    var map = Map<String, dynamic>();
     if (_id != null) {
       map['id'] = _id;
     }
@@ -59,5 +59,10 @@ class I01Entity implements DbEntity {
 
     map['entry_name'] = _entryName;
     return map;
+  }
+
+  @override
+  I01Entity getDbEntityFromMap(Map<String, dynamic> map) {
+    return I01Entity.fromMap(map);
   }
 }

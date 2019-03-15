@@ -36,3 +36,7 @@
   * DbAccountEntity
   * DbAccountRelatedEntity
 
+## [0.3.0] - 2018-03-15
+
+* Changing DbEntity:
+  * Adding abstract method getDbEntityFromMap(Map<String, dynamic> map);
