@@ -20,31 +20,30 @@ void main() {
         22);
   });
 
+  test('table metadata alteration', () {
+    expect(TableMetadata.SoftDeletable, 1);
+    expect(TableMetadata.TrackCreate, 2);
+    expect(TableMetadata.TrackUpdate, 4);
+  });
+
   group('base classes definitions', () {
     test('simple entity', () {
-      DbEntity dbEntity = I01Entity.fromMap(
-          {'id': 1, 'is_deleted': 0, 'record_date': 1552003055});
+      DbEntity dbEntity = I01Entity(1552003055, "New entry");
+      dbEntity.id = 1;
       expect(dbEntity.id, 1);
     });
     test('account', () {
-      DbAccountEntity dbEntity = UserAccount.fromMap({
-        'id': 1,
-        'account_name': 'John Doe',
-        'account_email': 'john.ross@the.dev',
-        'account_abbr': 'JR'
-      });
+      DbAccountEntity dbEntity =
+          UserAccount('John Doe', 'john.ross@the.dev', 'JR');
+      dbEntity.id = 1;
       expect(dbEntity.id, 1);
       expect(dbEntity.userName, 'John Doe');
       expect(dbEntity.email, 'john.ross@the.dev');
       expect(dbEntity.abbreviation, 'JR');
     });
     test('account related', () {
-      DbAccountRelatedEntity dbEntity = A01Entity.fromMap({
-        'id': 1,
-        'is_deleted': 0,
-        'account_id': 2,
-        'record_date': 1552003055
-      });
+      DbAccountRelatedEntity dbEntity = A01Entity(1552003055, 2, "Other entry");
+      dbEntity.id = 1;
       expect(dbEntity.id, 1);
       expect(dbEntity.accountId, 2);
     });

@@ -4,5 +4,5 @@ import 'package:flutter_orm_m8/base/db_entity.dart';
 /// i.e. user dependent
 abstract class DbAccountRelatedEntity implements DbEntity {
   /// the related account id
-  int get accountId;
+  int accountId;
 }
