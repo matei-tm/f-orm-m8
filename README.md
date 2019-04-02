@@ -6,9 +6,10 @@ Flutter package for ORM annotations.
 
 - [Flutter ORM Mate - flutter_orm_m8](#flutter-orm-mate---flutterormm8)
   - [Introduction](#introduction)
-    - [ColumnMetadata](#columnmetadata)
     - [DataTable](#datatable)
     - [DataColumn](#datacolumn)
+    - [TableMetadata](#tablemetadata)
+    - [ColumnMetadata](#columnmetadata)
   - [Usage](#usage)
 
 ## Introduction
@@ -25,6 +26,42 @@ In order to ease the code emitting three abstract classes are defined:
 - DbEntity
 - DbAccountEntity
 - DbAccountRelatedEntity
+
+### DataTable
+
+DataTable describes the required name for the table in conjuction with a bit mask for optional TableMetadata
+
+```dart
+@DataTable("a01_tests")
+class A01Test implements DbAccountRelatedEntity {
+```
+
+### DataColumn
+
+DataColumn describes the required name for the column in conjunction  with a bit mask for required ColumnMetadata's
+
+```dart
+  @DataColumn("id", ColumnMetadata.PrimaryKey | ColumnMetadata.Unique | ColumnMetadata.AutoIncrement)
+  int id;
+```
+
+### TableMetadata
+
+The TableMetadata describes the basic options for the table:
+
+- SoftDeletable
+- TrackCreate
+- TrackUpdate
+
+The options may be combined in various ways using | operator
+
+```dart
+@DataTable(
+    "health_issues",
+        TableMetadata.SoftDeletable |
+        TableMetadata.TrackCreate |
+        TableMetadata.TrackUpdate)
+```
 
 ### ColumnMetadata
 
@@ -43,23 +80,6 @@ The options may be combined in various ways using | operator
 @DataColumn("id", ColumnMetadata.PrimaryKey | ColumnMetadata.Unique | ColumnMetadata.AutoIncrement)
 ```
 
-### DataTable
-
-DataTable describes the required name for the table
-
-```dart
-@DataTable("a01_tests")
-class A01Test implements DbAccountRelatedEntity {
-```
-
-### DataColumn
-
-DataColumn describes the required name for the column in conjunction  with a bit mask for required ColumnMetadata's
-
-```dart
-  @DataColumn("id", ColumnMetadata.PrimaryKey | ColumnMetadata.Unique | ColumnMetadata.AutoIncrement)
-  int _id;
-```
 
 ## Usage
 
@@ -67,31 +87,16 @@ The package can be a start for other projects that aim to develop an ORM.
 Such project is [https://github.com/matei-tm/flutter-sqlite-m8-generator](https://github.com/matei-tm/flutter-sqlite-m8-generator)
 
 ```dart
-@DataTable("a01_tests")
+@DataTable("a01_tests", TableMetadata.SoftDeletable)
 class A01Test implements DbAccountRelatedEntity {
   @DataColumn("id", ColumnMetadata.PrimaryKey | ColumnMetadata.Unique | ColumnMetadata.AutoIncrement)
-  int _id;
+  int id;
 
   @DataColumn("account_id")
-  int _accountId;
+  int accountId;
 
   @DataColumn("record_date")
-  int _recordDate;
-
-  @DataColumn("is_deleted")
-  int _isDeleted;
-
-  A01Test.fromMap(Map<String, dynamic> map) {
-    this._id = map['id'];
-    this._accountId = map['account_id'];    
-    this._recordDate = map['record_date'];
-    this._isDeleted = map['is_deleted'];
-  }
-
-  @override
-  A01Test getDbEntityFromMap(Map<String, dynamic> map) {
-    return A01Test.fromMap(map);
-  }  
+  int recordDate;
 }
 ```
 

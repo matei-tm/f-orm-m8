@@ -44,6 +44,8 @@
 ## [0.4.0] - 2019-04-02
 
 * Adding TableMetadata to enhance DataTable
+* All the fields in DbEntity and descendants goes public
+* Removed all methods from DbEntity and descendants to keep the models as plain as possible
 
 ### TableMetadata options:
 
