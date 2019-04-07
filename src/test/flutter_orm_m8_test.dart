@@ -3,6 +3,7 @@ import 'package:flutter_orm_m8/flutter_orm_m8.dart';
 
 import 'base_implementations/accountrelated/a01_entity.dart';
 import 'base_implementations/independent/i01_entity.dart';
+import 'base_implementations/open/o01_entity.dart';
 import 'base_implementations/user_account.dart';
 
 void main() {
@@ -27,6 +28,13 @@ void main() {
   });
 
   group('base classes definitions', () {
+    test('open entity', () {
+      O01Entity dbEntity = O01Entity();
+      dbEntity.idPart1 = 1;
+      dbEntity.idPart2 = "_composite";
+      expect(dbEntity.getPrimaryKey(), "0000000001:_composite");
+    });
+
     test('simple entity', () {
       DbEntity dbEntity = I01Entity(1552003055, "New entry");
       dbEntity.id = 1;
