@@ -1,5 +1,10 @@
 ## [Unreleased]
 
+## [0.5.1] - 2019-04-08
+
+### Fixed
+
+* The pubspec description length must be between 60 and 180 characters
 
 ## [0.5.0] - 2019-04-08
 
