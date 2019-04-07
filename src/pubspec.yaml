@@ -1,6 +1,6 @@
 name: flutter_orm_m8
-description: Flutter package for ORM annotations. It defines ColumnMetadata, DataTable, DataColumn annotations. The main purpose is to be used by code generators to expand annotated models.
-version: 0.4.0
+description: Flutter package for ORM annotations. It defines ColumnMetadata, TableMetadata, DataTable, DataColumn annotations. The main purpose is to be used by code generators to expand annotated models.
+version: 0.5.0
 author: Mircea-Tiberiu MATEI<matei_tm@yahoo.com>
 homepage: https://github.com/matei-tm/flutter-orm-m8
 

@@ -1,15 +1,21 @@
 # Flutter ORM Mate - flutter_orm_m8
 
-![GitHub release](https://img.shields.io/github/release-pre/matei-tm/flutter-orm-m8.svg) [![pub package](https://img.shields.io/pub/v/flutter_orm_m8.svg)](https://pub.dartlang.org/packages/flutter_orm_m8) [![Build Status](https://travis-ci.org/matei-tm/flutter-orm-m8.svg?branch=master)](https://travis-ci.org/matei-tm/flutter-orm-m8)
+[![Gitter](https://img.shields.io/gitter/room/flutter-orm-m8/community.svg?style=flat-square)](https://gitter.im/flutter-orm-m8/community) [![GitHub release](https://img.shields.io/github/release/matei-tm/flutter-orm-m8.svg)](https://github.com/matei-tm/flutter-orm-m8) [![pub package](https://img.shields.io/pub/v/flutter_orm_m8.svg)](https://pub.dartlang.org/packages/flutter_orm_m8) [![Build Status](https://travis-ci.org/matei-tm/flutter-orm-m8.svg?branch=master)](https://travis-ci.org/matei-tm/flutter-orm-m8) [![license](https://img.shields.io/github/license/matei-tm/flutter-orm-m8.svg)](https://github.com/matei-tm/flutter-orm-m8/blob/master/LICENSE)
 
 Flutter package for ORM annotations.
 
 - [Flutter ORM Mate - flutter_orm_m8](#flutter-orm-mate---flutterormm8)
   - [Introduction](#introduction)
+  - [Annotations](#annotations)
     - [DataTable](#datatable)
     - [DataColumn](#datacolumn)
     - [TableMetadata](#tablemetadata)
     - [ColumnMetadata](#columnmetadata)
+  - [Interfaces](#interfaces)
+    - [DbOpenEntity](#dbopenentity)
+    - [DbEntity](#dbentity)
+    - [DbAccountEntity](#dbaccountentity)
+    - [DbAccountRelatedEntity implements DbEntity](#dbaccountrelatedentity-implements-dbentity)
   - [Usage](#usage)
 
 ## Introduction
@@ -22,11 +28,14 @@ The current version, defines four annotation types:
 - TableMetadata
 - ColumnMetadata
 
-In order to ease the code emitting three abstract classes are defined:
+In order to ease the code emitting four abstract classes are defined:
 
+- DbOpenEntity
 - DbEntity
-- DbAccountEntity
-- DbAccountRelatedEntity
+- DbAccountEntity implements DbEntity
+- DbAccountRelatedEntity implements DbEntity
+
+## Annotations
 
 ### DataTable
 
@@ -81,6 +90,33 @@ The options may be combined in various ways using | operator
 @DataColumn("id", ColumnMetadata.PrimaryKey | ColumnMetadata.Unique | ColumnMetadata.AutoIncrement)
 ```
 
+## Interfaces
+
+### DbOpenEntity
+
+DbOpenEntity is as it's name suggest a template for non restrictive models with composite primary keys.
+Also it may be used for non integer primary key implementation.  
+It defines a single method getPrimaryKey
+
+### DbEntity
+
+May be used for a general purpose model template with integer primary key named `id`
+
+### DbAccountEntity
+
+It implements DbEntity.
+May be used for a model template in a generic user account with the following fields:
+
+- userName
+- email
+- abbreviation
+
+### DbAccountRelatedEntity implements DbEntity
+
+It implements DbEntity.
+May be used for a model template in a generic, account dependent, entity with the following fields:
+
+- accountId
 
 ## Usage
 
