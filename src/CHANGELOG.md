@@ -1,5 +1,11 @@
 ## [Unreleased]
 
+## [0.6.0] - 2019-04-15
+
+### Changed
+
+* The DbAccountEntity fields. It received a new bool field named isCurrent
+
 ## [0.5.1] - 2019-04-08
 
 ### Fixed

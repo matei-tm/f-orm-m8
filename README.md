@@ -110,6 +110,7 @@ May be used for a model template in a generic user account with the following fi
 - userName
 - email
 - abbreviation
+- isCurrent
 
 ### DbAccountRelatedEntity implements DbEntity
 
