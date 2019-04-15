@@ -18,5 +18,8 @@ class UserAccount implements DbAccountEntity {
   @DataColumn("account_abbr", ColumnMetadata.NotNull)
   String abbreviation;
 
-  UserAccount(this.userName, this.email, this.abbreviation);
+  @DataColumn("is_current", ColumnMetadata.NotNull)
+  bool isCurrent;
+
+  UserAccount(this.userName, this.email, this.abbreviation, this.isCurrent);
 }

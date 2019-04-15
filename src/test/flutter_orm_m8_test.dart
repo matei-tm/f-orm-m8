@@ -42,12 +42,13 @@ void main() {
     });
     test('account', () {
       DbAccountEntity dbEntity =
-          UserAccount('John Doe', 'john.ross@the.dev', 'JR');
+          UserAccount('John Doe', 'john.ross@the.dev', 'JR', true);
       dbEntity.id = 1;
       expect(dbEntity.id, 1);
       expect(dbEntity.userName, 'John Doe');
       expect(dbEntity.email, 'john.ross@the.dev');
       expect(dbEntity.abbreviation, 'JR');
+      expect(dbEntity.isCurrent, true);
     });
     test('account related', () {
       DbAccountRelatedEntity dbEntity = A01Entity(1552003055, 2, "Other entry");

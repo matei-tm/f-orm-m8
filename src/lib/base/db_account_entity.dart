@@ -10,4 +10,7 @@ abstract class DbAccountEntity implements DbEntity {
 
   /// A two letter abbreviation
   String abbreviation;
+
+  /// A boolean that signals the current account
+  bool isCurrent;
 }
