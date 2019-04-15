@@ -1,8 +1,8 @@
 ---
 name: Publish request
 about: Publish master branch
-title: ''
-labels: ''
+title: 'Publish version x.x.x'
+labels: 'publish'
 assignees: ''
 
 ---
@@ -14,7 +14,7 @@ assignees: ''
 - [ ] Update documentation
   - [ ] README.md
   - [ ] src/README.md
-  - [ ] example/README.md
+  - [ ] src/example.dart
 - [ ] Format the code
   - [ ]  in src  ```dartfmt -w --fix src```
   - [ ]  in example ```dartfmt -w --fix example```
@@ -22,13 +22,9 @@ assignees: ''
   - [ ] ```cd src```
   - [ ] ```pub run test```
   - [ ] ```cd ..```
-  - [ ] ```cd example```
-  - [ ] ```flutter test```
-  - [ ] ```cd ..```
 - [ ] Commit with message `#xxxx. Publish review completed`
 - [ ] Dry run
   - [ ] ```cd src```
   - [ ] ```pub publish --dry-run```
 - [ ] Publish ```pub publish```
 - [ ] Commit with message `Completed publish closes #xxxx.`
-
