@@ -17,7 +17,6 @@ assignees: ''
   - [ ] src/example.dart
 - [ ] Format the code
   - [ ]  in src  ```dartfmt -w --fix src```
-  - [ ]  in example ```dartfmt -w --fix example```
 - [ ] Run tests 
   - [ ] ```cd src```
   - [ ] ```pub run test```
