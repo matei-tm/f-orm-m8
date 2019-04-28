@@ -8,9 +8,9 @@ import 'package:flutter_orm_m8/flutter_orm_m8.dart';
         TableMetadata.TrackUpdate)
 class HealthIssue implements DbAccountRelatedEntity {
   @DataColumn("id",
-      metadataLevel: ColumnMetadata.PrimaryKey |
-          ColumnMetadata.Unique |
-          ColumnMetadata.AutoIncrement)
+      metadataLevel: ColumnMetadata.primaryKey |
+          ColumnMetadata.unique |
+          ColumnMetadata.autoIncrement)
   int id;
 
   @DataColumn("account_id", compositeConstraints: [

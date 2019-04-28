@@ -2,20 +2,20 @@
 /// a column definition
 class ColumnMetadata {
   /// Used to ignore mapping
-  static const Ignore = 1;
+  static const int ignore = 1;
 
   /// Used to mark the PrimaryKey
-  static const PrimaryKey = 2;
+  static const int primaryKey = 2;
 
   /// Add unique constraint
-  static const Unique = 4;
+  static const int unique = 4;
 
   /// Add not null constraint
-  static const NotNull = 8;
+  static const int notNull = 8;
 
   /// Map as auto increment
-  static const AutoIncrement = 16;
+  static const int autoIncrement = 16;
 
   /// Add index
-  static const Indexed = 32;
+  static const int indexed = 32;
 }

@@ -3,21 +3,21 @@ import 'package:flutter_orm_m8/flutter_orm_m8.dart';
 @DataTable("profile_contacts")
 class UserAccount implements DbAccountEntity {
   @DataColumn("id",
-      metadataLevel: ColumnMetadata.PrimaryKey |
-          ColumnMetadata.Unique |
-          ColumnMetadata.AutoIncrement)
+      metadataLevel: ColumnMetadata.primaryKey |
+          ColumnMetadata.unique |
+          ColumnMetadata.autoIncrement)
   int id;
 
-  @DataColumn("account_name", metadataLevel: ColumnMetadata.NotNull)
+  @DataColumn("account_name", metadataLevel: ColumnMetadata.notNull)
   String userName;
 
-  @DataColumn("account_email", metadataLevel: ColumnMetadata.NotNull)
+  @DataColumn("account_email", metadataLevel: ColumnMetadata.notNull)
   String email;
 
-  @DataColumn("account_abbr", metadataLevel: ColumnMetadata.NotNull)
+  @DataColumn("account_abbr", metadataLevel: ColumnMetadata.notNull)
   String abbreviation;
 
-  @DataColumn("is_current", metadataLevel: ColumnMetadata.NotNull)
+  @DataColumn("is_current", metadataLevel: ColumnMetadata.notNull)
   bool isCurrent;
 
   UserAccount(this.userName, this.email, this.abbreviation, this.isCurrent);

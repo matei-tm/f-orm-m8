@@ -3,9 +3,9 @@ import 'package:flutter_orm_m8/flutter_orm_m8.dart';
 @DataTable("i01_entities")
 class I01Entity implements DbEntity {
   @DataColumn("id",
-      metadataLevel: ColumnMetadata.PrimaryKey |
-          ColumnMetadata.Unique |
-          ColumnMetadata.AutoIncrement)
+      metadataLevel: ColumnMetadata.primaryKey |
+          ColumnMetadata.unique |
+          ColumnMetadata.autoIncrement)
   int id;
 
   @DataColumn("record_date")

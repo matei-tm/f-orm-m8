@@ -9,16 +9,16 @@ import 'base_implementations/user_account.dart';
 
 void main() {
   test('column metadata alteration', () {
-    expect(ColumnMetadata.Ignore, 1);
-    expect(ColumnMetadata.PrimaryKey, 2);
-    expect(ColumnMetadata.Unique, 4);
-    expect(ColumnMetadata.NotNull, 8);
-    expect(ColumnMetadata.AutoIncrement, 16);
-    expect(ColumnMetadata.Indexed, 32);
+    expect(ColumnMetadata.ignore, 1);
+    expect(ColumnMetadata.primaryKey, 2);
+    expect(ColumnMetadata.unique, 4);
+    expect(ColumnMetadata.notNull, 8);
+    expect(ColumnMetadata.autoIncrement, 16);
+    expect(ColumnMetadata.indexed, 32);
     expect(
-        ColumnMetadata.PrimaryKey |
-            ColumnMetadata.Unique |
-            ColumnMetadata.AutoIncrement,
+        ColumnMetadata.primaryKey |
+            ColumnMetadata.unique |
+            ColumnMetadata.autoIncrement,
         22);
   });
 

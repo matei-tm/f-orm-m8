@@ -11,6 +11,7 @@
 
 * The DataColumn constructor parameters. The current version
   requires a mandatory name. The parameter metadataLevel is now named and optional. A third optional named parameter `compositeConstraints` as a list of `CompositeConstraint` was added.
+* ColumnMetadata fields name to lowerCamelCase
 
 ## [0.6.0] - 2019-04-15
 

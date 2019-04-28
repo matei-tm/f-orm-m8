@@ -2,10 +2,10 @@ import 'package:flutter_orm_m8/flutter_orm_m8.dart';
 
 @DataTable("o01_entities")
 class O01Entity implements DbOpenEntity {
-  @DataColumn("id_part1", metadataLevel: ColumnMetadata.PrimaryKey)
+  @DataColumn("id_part1", metadataLevel: ColumnMetadata.primaryKey)
   int idPart1;
 
-  @DataColumn("id_part2", metadataLevel: ColumnMetadata.PrimaryKey)
+  @DataColumn("id_part2", metadataLevel: ColumnMetadata.primaryKey)
   String idPart2;
 
   @DataColumn("record_date")

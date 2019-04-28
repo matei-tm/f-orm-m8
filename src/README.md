@@ -51,7 +51,7 @@ class A01Test implements DbAccountRelatedEntity {
 DataColumn describes the required name for the column in conjunction  with a bit mask for required ColumnMetadata's
 
 ```dart
-  @DataColumn("id", ColumnMetadata.PrimaryKey | ColumnMetadata.Unique | ColumnMetadata.AutoIncrement)
+  @DataColumn("id", ColumnMetadata.primaryKey | ColumnMetadata.unique | ColumnMetadata.autoIncrement)
   int id;
 ```
 
@@ -77,17 +77,17 @@ The options may be combined in various ways using | operator
 
 The ColumnMetadata describes the basic options for a column definition:
 
-- Ignore
-- PrimaryKey
-- Unique
-- NotNull
-- AutoIncrement
-- Indexed
+- ignore
+- primaryKey
+- unique
+- notNull
+- autoIncrement
+- indexed
 
 The options may be combined in various ways using | operator
 
 ```dart
-@DataColumn("id", ColumnMetadata.PrimaryKey | ColumnMetadata.Unique | ColumnMetadata.AutoIncrement)
+@DataColumn("id", ColumnMetadata.primaryKey | ColumnMetadata.unique | ColumnMetadata.autoIncrement)
 ```
 
 ## Interfaces
@@ -127,7 +127,7 @@ Such project is [https://github.com/matei-tm/flutter-sqlite-m8-generator](https:
 ```dart
 @DataTable("a01_tests", TableMetadata.SoftDeletable)
 class A01Test implements DbAccountRelatedEntity {
-  @DataColumn("id", ColumnMetadata.PrimaryKey | ColumnMetadata.Unique | ColumnMetadata.AutoIncrement)
+  @DataColumn("id", ColumnMetadata.primaryKey | ColumnMetadata.unique | ColumnMetadata.autoIncrement)
   int id;
 
   @DataColumn("account_id")
