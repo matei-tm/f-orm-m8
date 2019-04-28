@@ -3,9 +3,9 @@ import 'package:flutter_orm_m8/flutter_orm_m8.dart';
 
 @DataTable(
     "health_issues",
-    TableMetadata.SoftDeletable |
-        TableMetadata.TrackCreate |
-        TableMetadata.TrackUpdate)
+    TableMetadata.softDeletable |
+        TableMetadata.trackCreate |
+        TableMetadata.trackUpdate)
 class HealthIssue implements DbAccountRelatedEntity {
   @DataColumn("id",
       metadataLevel: ColumnMetadata.primaryKey |

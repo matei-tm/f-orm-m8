@@ -59,18 +59,18 @@ DataColumn describes the required name for the column in conjunction  with a bit
 
 The TableMetadata describes the basic options for the table:
 
-- SoftDeletable
-- TrackCreate
-- TrackUpdate
+- softDeletable
+- trackCreate
+- trackUpdate
 
 The options may be combined in various ways using | operator
 
 ```dart
 @DataTable(
     "health_issues",
-        TableMetadata.SoftDeletable |
-        TableMetadata.TrackCreate |
-        TableMetadata.TrackUpdate)
+        TableMetadata.softDeletable |
+        TableMetadata.trackCreate |
+        TableMetadata.trackUpdate)
 ```
 
 ### ColumnMetadata
@@ -125,7 +125,7 @@ The package can be a start for other projects that aim to develop an ORM.
 Such project is [https://github.com/matei-tm/flutter-sqlite-m8-generator](https://github.com/matei-tm/flutter-sqlite-m8-generator)
 
 ```dart
-@DataTable("a01_tests", TableMetadata.SoftDeletable)
+@DataTable("a01_tests", TableMetadata.softDeletable)
 class A01Test implements DbAccountRelatedEntity {
   @DataColumn("id", ColumnMetadata.primaryKey | ColumnMetadata.unique | ColumnMetadata.autoIncrement)
   int id;

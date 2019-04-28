@@ -2,11 +2,11 @@
 /// a table definition
 class TableMetadata {
   /// Used to enable soft delete
-  static const SoftDeletable = 1;
+  static const softDeletable = 1;
 
   /// Used to include column date_created
-  static const TrackCreate = 2;
+  static const trackCreate = 2;
 
   /// Used to include column date_updated
-  static const TrackUpdate = 4;
+  static const trackUpdate = 4;
 }

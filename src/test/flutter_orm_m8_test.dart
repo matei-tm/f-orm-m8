@@ -36,9 +36,9 @@ void main() {
   });
 
   test('table metadata alteration', () {
-    expect(TableMetadata.SoftDeletable, 1);
-    expect(TableMetadata.TrackCreate, 2);
-    expect(TableMetadata.TrackUpdate, 4);
+    expect(TableMetadata.softDeletable, 1);
+    expect(TableMetadata.trackCreate, 2);
+    expect(TableMetadata.trackUpdate, 4);
   });
 
   group('base classes definitions', () {
