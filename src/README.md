@@ -9,8 +9,12 @@ Flutter package for ORM annotations.
   - [Annotations](#annotations)
     - [DataTable](#datatable)
     - [DataColumn](#datacolumn)
+      - [Description](#description)
+      - [A simple approach](#a-simple-approach)
+      - [A fine tuned approach](#a-fine-tuned-approach)
     - [TableMetadata](#tablemetadata)
     - [ColumnMetadata](#columnmetadata)
+    - [CompositeConstraint](#compositeconstraint)
   - [Interfaces](#interfaces)
     - [DbOpenEntity](#dbopenentity)
     - [DbEntity](#dbentity)
@@ -27,8 +31,9 @@ The current version, defines four annotation types:
 - DataColumn
 - TableMetadata
 - ColumnMetadata
+- CompositeConstraint
 
-In order to ease the code emitting four abstract classes are defined:
+In order to ease the code emitting, four abstract classes are defined:
 
 - DbOpenEntity
 - DbEntity
@@ -48,11 +53,55 @@ class A01Test implements DbAccountRelatedEntity {
 
 ### DataColumn
 
+#### Description
+
+The DataColumn constructor has three parameters:
+- name
+  - type: String
+  - positional
+  - mandatory
+- metadataLevel 
+  - type: int as combination of [MetadataLevel](#MetadataLevel)
+  - named
+  - optional
+- compositeConstraints
+  - type: List<[CompositeConstraint](#CompositeConstraint)>
+  - named
+  - optional
+
+```dart
+ const DataColumn(this.name, {this.metadataLevel, this.compositeConstraints});
+```
+
+#### A simple approach
+
 DataColumn describes the required name for the column in conjunction  with a bit mask for required ColumnMetadata's
 
 ```dart
-  @DataColumn("id", ColumnMetadata.primaryKey | ColumnMetadata.unique | ColumnMetadata.autoIncrement)
+  @DataColumn(
+    "id", 
+    metadataLevel: ColumnMetadata.primaryKey | ColumnMetadata.unique | ColumnMetadata.autoIncrement)
   int id;
+```
+
+#### A fine tuned approach
+
+DataColumn describes the required name for the column in conjunction  with a list of composite constraints. For example, if we need a composite, unique constraint defined on the combination of two fields, we define the composite with the same name:
+
+```dart
+  @DataColumn("account_id", compositeConstraints: [
+    CompositeConstraint(
+        name: "uq_account_entry",
+        constraintType: CompositeConstraintType.unique)
+  ])
+  int accountId;
+
+  @DataColumn("description", compositeConstraints: [
+    CompositeConstraint(
+        name: "uq_account_entry",
+        constraintType: CompositeConstraintType.unique)
+  ])
+  String description;
 ```
 
 ### TableMetadata
@@ -68,9 +117,7 @@ The options may be combined in various ways using | operator
 ```dart
 @DataTable(
     "health_issues",
-        TableMetadata.softDeletable |
-        TableMetadata.trackCreate |
-        TableMetadata.trackUpdate)
+    metadataLevel: TableMetadata.softDeletable | TableMetadata.trackCreate | TableMetadata.trackUpdate)
 ```
 
 ### ColumnMetadata
@@ -87,8 +134,22 @@ The ColumnMetadata describes the basic options for a column definition:
 The options may be combined in various ways using | operator
 
 ```dart
-@DataColumn("id", ColumnMetadata.primaryKey | ColumnMetadata.unique | ColumnMetadata.autoIncrement)
+@DataColumn(
+  "id", 
+  metadataLevel: ColumnMetadata.primaryKey | ColumnMetadata.unique | ColumnMetadata.autoIncrement)
 ```
+
+### CompositeConstraint
+
+The CompositeConstraint is instantiated with named, required parameters:
+
+- name - the name of the constraint
+- constraintType - the type of the constraint as enum with the following values:
+  -  unique, 
+  -  primaryKey, 
+  -  foreignKey, 
+  -  indexed
+
 
 ## Interfaces
 
@@ -127,11 +188,24 @@ Such project is [https://github.com/matei-tm/flutter-sqlite-m8-generator](https:
 ```dart
 @DataTable("a01_tests", TableMetadata.softDeletable)
 class A01Test implements DbAccountRelatedEntity {
-  @DataColumn("id", ColumnMetadata.primaryKey | ColumnMetadata.unique | ColumnMetadata.autoIncrement)
+  @DataColumn(
+    "id", 
+    metadataLevel: ColumnMetadata.primaryKey | ColumnMetadata.unique | ColumnMetadata.autoIncrement)
   int id;
 
-  @DataColumn("account_id")
+  @DataColumn("account_id", compositeConstraints: [
+    CompositeConstraint(
+        name: "uq_account_entry",
+        constraintType: CompositeConstraintType.unique)
+  ])
   int accountId;
+
+  @DataColumn("description", compositeConstraints: [
+    CompositeConstraint(
+        name: "uq_account_entry",
+        constraintType: CompositeConstraintType.unique)
+  ])
+  String description;
 
   @DataColumn("record_date")
   int recordDate;
