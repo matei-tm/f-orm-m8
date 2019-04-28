@@ -2,9 +2,8 @@ import 'package:flutter_orm_m8/flutter_orm_m8.dart';
 
 @DataTable("a01_entities")
 class A01Entity implements DbAccountRelatedEntity {
-  @DataColumn(
-      "id",
-      ColumnMetadata.PrimaryKey |
+  @DataColumn("id",
+      metadataLevel: ColumnMetadata.PrimaryKey |
           ColumnMetadata.Unique |
           ColumnMetadata.AutoIncrement)
   int id;

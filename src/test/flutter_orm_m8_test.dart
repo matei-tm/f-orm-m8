@@ -1,3 +1,4 @@
+import 'package:flutter_orm_m8/annotation/composite_constraint.dart';
 import 'package:test/test.dart';
 import 'package:flutter_orm_m8/flutter_orm_m8.dart';
 
@@ -19,6 +20,19 @@ void main() {
             ColumnMetadata.Unique |
             ColumnMetadata.AutoIncrement,
         22);
+  });
+
+  test('column composite constraints alteration', () {
+    var a = DataColumn("composite", compositeConstraints: [
+      CompositeConstraint(
+          name: "uq_account_entry",
+          constraintType: CompositeConstraintType.unique)
+    ]);
+    expect(a.name, "composite");
+    expect(a.compositeConstraints.length, 1);
+    expect(a.compositeConstraints.first.name, "uq_account_entry");
+    expect(a.compositeConstraints.first.constraintType,
+        CompositeConstraintType.unique);
   });
 
   test('table metadata alteration', () {

@@ -1,3 +1,5 @@
+import 'package:flutter_orm_m8/annotation/composite_constraint.dart';
+
 /// DataColumn describe the
 /// generated column
 class DataColumn {
@@ -7,6 +9,9 @@ class DataColumn {
   /// A bit mask formed by a combination of ColumnMetadata
   final int metadataLevel;
 
+  /// A list of composite constraints
+  final List<CompositeConstraint> compositeConstraints;
+
   /// Constructor to define the annotation parameters
-  const DataColumn([this.name, this.metadataLevel]);
+  const DataColumn(this.name, {this.metadataLevel, this.compositeConstraints});
 }

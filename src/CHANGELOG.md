@@ -1,5 +1,17 @@
 ## [Unreleased]
 
+## [0.7.0-beta] - 2019-04-29
+
+### Added
+
+* `CompositeConstraintType` - enum to signal constraints that are candidates to composition
+* `CompositeConstraint` -  describe the constraints that require non default naming or aggregation with another constraint with same name and type
+
+### Changed
+
+* The DataColumn constructor parameters. The current version
+  requires a mandatory name. The parameter metadataLevel is now named and optional. A third optional named parameter `compositeConstraints` as a list of `CompositeConstraint` was added.
+
 ## [0.6.0] - 2019-04-15
 
 ### Changed
