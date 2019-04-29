@@ -27,3 +27,10 @@ assignees: ''
   - [ ] ```pub publish --dry-run```
 - [ ] Publish ```pub publish```
 - [ ] Commit with message `Completed publish closes #xxxx.`
+- [ ] Merge develop changes into master
+  - [ ] Check CI [results](https://travis-ci.org/matei-tm/flutter-orm-m8) 
+- [ ] Dry run
+  - [ ] ```cd src```
+  - [ ] ```pub publish --dry-run```
+- [ ] Publish ```pub publish```
+- [ ] Commit empty ```git commit --allow-empty -m "Completed publish closes #xxxx."```
