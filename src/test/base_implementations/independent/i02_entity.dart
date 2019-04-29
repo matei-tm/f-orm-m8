@@ -1,4 +1,3 @@
-import 'package:flutter_orm_m8/annotation/composite_constraint.dart';
 import 'package:flutter_orm_m8/flutter_orm_m8.dart';
 
 @DataTable("i02_entities")
