@@ -1,5 +1,12 @@
 ## [Unreleased]
 
+## [0.7.1] - 2019-04-29
+
+### Changed
+
+* flutter_orm_m8.dart exports the composite_constraint
+* The README.md was refined
+
 ## [0.7.0] - 2019-04-29
 
 ### Added
