@@ -1,4 +1,4 @@
-library flutter_orm_m8.base;
+library f_orm_m8.base;
 
 export './db_open_entity.dart';
 export './db_entity.dart';

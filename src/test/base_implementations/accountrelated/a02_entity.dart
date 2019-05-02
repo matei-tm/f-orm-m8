@@ -1,4 +1,4 @@
-import 'package:flutter_orm_m8/flutter_orm_m8.dart';
+import 'package:f_orm_m8/f_orm_m8.dart';
 
 @DataTable("a01_entities")
 class A02Entity implements DbAccountRelatedEntity {

@@ -1,4 +1,4 @@
-import 'package:flutter_orm_m8/annotation/composite_constraint.dart';
+import 'package:f_orm_m8/annotation/composite_constraint.dart';
 
 /// DataColumn describe the
 /// generated column

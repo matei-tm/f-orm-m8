@@ -1,4 +1,4 @@
-import 'package:flutter_orm_m8/base/db_entity.dart';
+import 'package:f_orm_m8/base/db_entity.dart';
 
 /// Base class for entities related to account
 /// i.e. user dependent

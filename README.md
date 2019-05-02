@@ -1,10 +1,10 @@
-# Flutter ORM Mate - flutter_orm_m8
+# Dart ORM Mate - f_orm_m8
 
-[![Gitter](https://img.shields.io/gitter/room/flutter-orm-m8/community.svg?style=flat-square)](https://gitter.im/flutter-orm-m8/community) [![GitHub release](https://img.shields.io/github/release/matei-tm/flutter-orm-m8.svg)](https://github.com/matei-tm/flutter-orm-m8) [![pub package](https://img.shields.io/pub/v/flutter_orm_m8.svg)](https://pub.dartlang.org/packages/flutter_orm_m8) [![Build Status](https://travis-ci.org/matei-tm/flutter-orm-m8.svg?branch=master)](https://travis-ci.org/matei-tm/flutter-orm-m8) [![license](https://img.shields.io/github/license/matei-tm/flutter-orm-m8.svg)](https://github.com/matei-tm/flutter-orm-m8/blob/master/LICENSE)
+[![Gitter](https://img.shields.io/gitter/room/flutter-orm-m8/community.svg?style=flat-square)](https://gitter.im/flutter-orm-m8/community) [![GitHub release](https://img.shields.io/github/release/matei-tm/f-orm-m8.svg)](https://github.com/matei-tm/f-orm-m8) [![pub package](https://img.shields.io/pub/v/f_orm_m8.svg)](https://pub.dartlang.org/packages/f_orm_m8) [![Build Status](https://travis-ci.org/matei-tm/flutter-orm-m8.svg?branch=master)](https://travis-ci.org/matei-tm/flutter-orm-m8) [![license](https://img.shields.io/github/license/matei-tm/f-orm-m8.svg)](https://github.com/matei-tm/f-orm-m8/blob/master/LICENSE)
 
-Flutter package for ORM annotations.
+Dart package for ORM annotations.
 
-- [Flutter ORM Mate - flutter_orm_m8](#flutter-orm-mate---flutterormm8)
+- [Dart ORM Mate - f_orm_m8](#flutter-orm-mate---flutterormm8)
   - [Introduction](#introduction)
   - [Annotations](#annotations)
     - [DataTable](#datatable)

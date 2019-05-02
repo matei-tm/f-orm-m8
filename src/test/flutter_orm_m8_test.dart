@@ -1,5 +1,5 @@
 import 'package:test/test.dart';
-import 'package:flutter_orm_m8/flutter_orm_m8.dart';
+import 'package:f_orm_m8/f_orm_m8.dart';
 
 import 'base_implementations/accountrelated/a01_entity.dart';
 import 'base_implementations/independent/i01_entity.dart';
