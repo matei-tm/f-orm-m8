@@ -1,10 +1,10 @@
 # Dart ORM Mate - f_orm_m8
 
-[![Gitter](https://img.shields.io/gitter/room/flutter-orm-m8/community.svg?style=flat-square)](https://gitter.im/flutter-orm-m8/community) [![GitHub release](https://img.shields.io/github/release/matei-tm/f-orm-m8.svg)](https://github.com/matei-tm/f-orm-m8) [![pub package](https://img.shields.io/pub/v/f_orm_m8.svg)](https://pub.dartlang.org/packages/f_orm_m8) [![Build Status](https://travis-ci.org/matei-tm/flutter-orm-m8.svg?branch=master)](https://travis-ci.org/matei-tm/flutter-orm-m8) [![license](https://img.shields.io/github/license/matei-tm/f-orm-m8.svg)](https://github.com/matei-tm/f-orm-m8/blob/master/LICENSE)
+[![Gitter](https://img.shields.io/gitter/room/flutter-orm-m8/community.svg?style=flat-square)](https://gitter.im/flutter-orm-m8/community) [![GitHub release](https://img.shields.io/github/release/matei-tm/f-orm-m8.svg)](https://github.com/matei-tm/f-orm-m8) [![pub package](https://img.shields.io/pub/v/f_orm_m8.svg)](https://pub.dartlang.org/packages/f_orm_m8) [![Build Status](https://travis-ci.org/matei-tm/f-orm-m8.svg?branch=master)](https://travis-ci.org/matei-tm/f-orm-m8) [![license](https://img.shields.io/github/license/matei-tm/f-orm-m8.svg)](https://github.com/matei-tm/f-orm-m8/blob/master/LICENSE)
 
 Dart package for ORM annotations.
 
-- [Dart ORM Mate - f_orm_m8](#flutter-orm-mate---flutterormm8)
+- [Dart ORM Mate - f_orm_m8](#dart-orm-mate---formm8)
   - [Introduction](#introduction)
   - [Annotations](#annotations)
     - [DataTable](#datatable)
@@ -34,10 +34,22 @@ The current version defines two main annotation types and some helpers associate
 
 In order to ease the code emitting, four abstract classes are defined:
 
-- [DbOpenEntity](#dbopenentity)
-- [DbEntity](#dbentity)
-- [DbAccountEntity implements DbEntity](#dbaccountentity)
-- [DbAccountRelatedEntity implements DbEntity](#dbaccountrelatedentity-implements-dbentity)
+- [Dart ORM Mate - f_orm_m8](#dart-orm-mate---formm8)
+  - [Introduction](#introduction)
+  - [Annotations](#annotations)
+    - [DataTable](#datatable)
+      - [TableMetadata](#tablemetadata)
+    - [DataColumn](#datacolumn)
+      - [ColumnMetadata](#columnmetadata)
+      - [CompositeConstraint](#compositeconstraint)
+      - [A simple approach](#a-simple-approach)
+      - [A fine tuned approach](#a-fine-tuned-approach)
+  - [Interfaces](#interfaces)
+    - [DbOpenEntity](#dbopenentity)
+    - [DbEntity](#dbentity)
+    - [DbAccountEntity](#dbaccountentity)
+    - [DbAccountRelatedEntity implements DbEntity](#dbaccountrelatedentity-implements-dbentity)
+  - [Usage](#usage)
 
 ## Annotations
 
