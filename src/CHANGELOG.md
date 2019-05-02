@@ -1,5 +1,12 @@
 ## [Unreleased]
 
+## [0.7.1+1] - 2019-04-29
+
+### Changed
+
+* Marked as deprecated. Replaced by [f_orm_m8](http://pub.dartlang.org/packages/f_orm_m8)
+* See [f_orm_m8](http://pub.dartlang.org/packages/f_orm_m8) for new updated framework
+
 ## [0.7.1] - 2019-04-29
 
 ### Changed
