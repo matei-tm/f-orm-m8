@@ -1,13 +1,24 @@
 ## [Unreleased]
 
+## [0.8.0+1] - 2019-05-03
+
+### Changed
+
+* The CHANGELOG.md was reviewed with small fixes
+* The README.md was reviewed with small fixes
+
 ## [0.8.0] - 2019-05-02
 
 ### Changed
 
 * The github project was renamed from **flutter-orm-m8** to **f-orm-m8**
-* It package was renamed from flutter_orm_m8 to f_orm_m8
+* The dart package was renamed from **flutter_orm_m8** to **f_orm_m8**
 * The dart package was published as [f_orm_m8](http://pub.dartlang.org/packages/f_orm_m8)
 * See [f_orm_m8](http://pub.dartlang.org/packages/f_orm_m8) for new updated framework
+
+### Removed
+
+* The former dart package  **flutter_orm_m8** is not longer maintained
 
 ## [0.7.1] - 2019-04-29
 

@@ -1,12 +1,13 @@
-# Dart ORM Mate - f_orm_m8
+# Dart Framework ORM M8 
 
 [![Gitter](https://img.shields.io/gitter/room/flutter-orm-m8/community.svg?style=flat-square)](https://gitter.im/flutter-orm-m8/community) [![GitHub release](https://img.shields.io/github/release/matei-tm/f-orm-m8.svg)](https://github.com/matei-tm/f-orm-m8) [![pub package](https://img.shields.io/pub/v/f_orm_m8.svg)](https://pub.dartlang.org/packages/f_orm_m8) [![Build Status](https://travis-ci.org/matei-tm/f-orm-m8.svg?branch=master)](https://travis-ci.org/matei-tm/f-orm-m8) [![license](https://img.shields.io/github/license/matei-tm/f-orm-m8.svg)](https://github.com/matei-tm/f-orm-m8/blob/master/LICENSE)
 
-Dart package for ORM annotations.
+> f_orm_m8 - \fɔːrm meɪt\ It defines the core of **M8**, a tiny ORM framework with a simple set of annotations.
 
-- [Dart ORM Mate - f_orm_m8](#dart-orm-mate---formm8)
+- [Dart Framework ORM M8](#dart-framework-orm-m8)
+  - [Description](#description)
   - [Introduction](#introduction)
-  - [Annotations](#annotations)
+  - [Annotation](#annotation)
     - [DataTable](#datatable)
       - [TableMetadata](#tablemetadata)
     - [DataColumn](#datacolumn)
@@ -19,7 +20,17 @@ Dart package for ORM annotations.
     - [DbEntity](#dbentity)
     - [DbAccountEntity](#dbaccountentity)
     - [DbAccountRelatedEntity implements DbEntity](#dbaccountrelatedentity-implements-dbentity)
-  - [Usage](#usage)
+  - [Usage convention](#usage-convention)
+  - [Concrete implementation examples](#concrete-implementation-examples)
+
+## Description
+
+The package is for developers of code generators. The goal is to have a framework that, besides relational mapping, offers the possibility to generate scaffolds for basic usage cases: user account, user data, data tracking (create, update, delete), soft delete.  
+If you are looking for a ready to use implementation, check [Concrete implementation examples](#concrete-implementation-examples)!
+
+Promoted implementations:
+
+1. [f_orm_m8_sqlite](https://pub.dartlang.org/packages/f_orm_m8_sqlite) - a Sqlite fixture generator with mapping capability out of the box. It is stuffed with a Flutter example project as a showcase for the common use cases covered by **M8**. See [sources on github](https://github.com/matei-tm/f-orm-m8-sqlite)
 
 ## Introduction
 
@@ -27,35 +38,28 @@ The package adds definitions for a set of types that could be combined to expand
 The current version defines two main annotation types and some helpers associated with each definition:
 
 - [DataTable](#datatable)
-  - [TableMetadata](#tablemetadata)
+  - [TableMetadata](#tablemetadata): trackCreate, trackUpdate, softDeletable
 - [DataColumn](#datacolumn)
-  - [ColumnMetadata](#columnmetadata)
-  - [CompositeConstraint](#compositeconstraint)
+  - [ColumnMetadata](#columnmetadata): ignore, primaryKey, unique, notNull, autoIncrement, indexed
+  - [CompositeConstraint](#compositeconstraint): unique, primaryKey, foreignKey, indexed
 
 In order to ease the code emitting, four abstract classes are defined:
 
-- [Dart ORM Mate - f_orm_m8](#dart-orm-mate---formm8)
-  - [Introduction](#introduction)
-  - [Annotations](#annotations)
-    - [DataTable](#datatable)
-      - [TableMetadata](#tablemetadata)
-    - [DataColumn](#datacolumn)
-      - [ColumnMetadata](#columnmetadata)
-      - [CompositeConstraint](#compositeconstraint)
-      - [A simple approach](#a-simple-approach)
-      - [A fine tuned approach](#a-fine-tuned-approach)
-  - [Interfaces](#interfaces)
-    - [DbOpenEntity](#dbopenentity)
-    - [DbEntity](#dbentity)
-    - [DbAccountEntity](#dbaccountentity)
-    - [DbAccountRelatedEntity implements DbEntity](#dbaccountrelatedentity-implements-dbentity)
-  - [Usage](#usage)
+  - [DbOpenEntity](#dbopenentity): non constrained entity
+  - [DbEntity](#dbentity): an entity with Id as primary key
+  - [DbAccountEntity](#dbaccountentity): a user account template with Id as primary key
+  - [DbAccountRelatedEntity](#dbaccountrelatedentity-implements-dbentity): user related data entities
 
-## Annotations
+## Annotation
+
+The annotation conventions are splitted in two:
+
+- DataTable
+- DataColumn
 
 ### DataTable
 
-DataTable describes the required name for the table in conjuction with a bit mask for optional [TableMetadata](#TableMetadata). Table metadata is specified with the parameter `metadataLevel`, and is a syntactic sugar to generate the proper fixture without explicitly add the required fields.  
+DataTable describes the required name for the table in conjuction with a bit mask for optional [TableMetadata](#TableMetadata). Table metadata is specified with the parameter `metadataLevel`, and is a syntactic sugar to generate the proper fixture without explicitly adding the required fields.  
 
 ```dart
 @DataTable(
@@ -203,10 +207,10 @@ Can be used for a model template in a generic, account dependent, entity with th
 
 - accountId
 
-## Usage
+## Usage convention
 
-The package can be a start for other projects that aim to develop an ORM.
-Such a project is [https://github.com/matei-tm/flutter-sqlite-m8-generator](https://github.com/matei-tm/flutter-sqlite-m8-generator)
+The package can be a start for other projects that aim to develop an ORM scaffolding infrastructure. It is up to developers how they implement the gems of this package. We recommend the annotations to be placed as in the following example:
+
 
 ```dart
 @DataTable("a01_tests", TableMetadata.softDeletable)
@@ -234,4 +238,15 @@ class A01Test implements DbAccountRelatedEntity {
   int recordDate;
 }
 ```
+
+## Concrete implementation examples
+
+The following is a list of `f-orm-m8` implementations by supported backend database.
+
+| package name                                                           | version                                                                                                               | database | source                                                         |                                                                                           |
+| ---------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- | -------- | -------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
+| [f_orm_m8_sqlite]((https://pub.dartlang.org/packages/f_orm_m8_sqlite)) | [![pub package](https://img.shields.io/pub/v/f_orm_m8_sqlite.svg)](https://pub.dartlang.org/packages/f_orm_m8_sqlite) | SQLite   | [f-orm-m8-sqlite](https://github.com/matei-tm/f-orm-m8-sqlite) | ![GitHub release](https://img.shields.io/github/release-pre/matei-tm/f-orm-m8-sqlite.svg) |
+
+
+
 
