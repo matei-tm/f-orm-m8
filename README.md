@@ -245,8 +245,5 @@ The following is a list of `f-orm-m8` implementations by supported backend datab
 
 | package name                                                           | version                                                                                                               | database | source                                                         |                                                                                           |
 | ---------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- | -------- | -------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
-| [f_orm_m8_sqlite]((https://pub.dartlang.org/packages/f_orm_m8_sqlite)) | [![pub package](https://img.shields.io/pub/v/f_orm_m8_sqlite.svg)](https://pub.dartlang.org/packages/f_orm_m8_sqlite) | SQLite   | [f-orm-m8-sqlite](https://github.com/matei-tm/f-orm-m8-sqlite) | ![GitHub release](https://img.shields.io/github/release-pre/matei-tm/f-orm-m8-sqlite.svg) |
-
-
-
+| [f_orm_m8_sqlite](https://pub.dartlang.org/packages/f_orm_m8_sqlite) | [![pub package](https://img.shields.io/pub/v/f_orm_m8_sqlite.svg)](https://pub.dartlang.org/packages/f_orm_m8_sqlite) | SQLite   | [f-orm-m8-sqlite](https://github.com/matei-tm/f-orm-m8-sqlite) | ![GitHub release](https://img.shields.io/github/release-pre/matei-tm/f-orm-m8-sqlite.svg) |
 

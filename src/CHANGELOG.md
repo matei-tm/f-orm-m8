@@ -1,5 +1,11 @@
 ## [Unreleased]
 
+## [0.8.0+2] - 2019-05-03
+
+### Changed
+
+* The README.md was reviewed with small fixes
+
 ## [0.8.0+1] - 2019-05-03
 
 ### Changed
