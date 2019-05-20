@@ -1,6 +1,11 @@
 # Dart Framework ORM M8 
 
-[![Gitter](https://img.shields.io/gitter/room/flutter-orm-m8/community.svg?style=flat-square)](https://gitter.im/flutter-orm-m8/community) [![GitHub release](https://img.shields.io/github/release/matei-tm/f-orm-m8.svg)](https://github.com/matei-tm/f-orm-m8) [![pub package](https://img.shields.io/pub/v/f_orm_m8.svg)](https://pub.dartlang.org/packages/f_orm_m8) [![Build Status](https://travis-ci.org/matei-tm/f-orm-m8.svg?branch=master)](https://travis-ci.org/matei-tm/f-orm-m8) [![license](https://img.shields.io/github/license/matei-tm/f-orm-m8.svg)](https://github.com/matei-tm/f-orm-m8/blob/master/LICENSE)
+[![Gitter](https://img.shields.io/gitter/room/flutter-orm-m8/community.svg?style=flat-square)](https://gitter.im/flutter-orm-m8/community) 
+[![GitHub release](https://img.shields.io/github/release/matei-tm/f-orm-m8.svg)](https://github.com/matei-tm/f-orm-m8) 
+[![pub package](https://img.shields.io/pub/v/f_orm_m8.svg)](https://pub.dartlang.org/packages/f_orm_m8) 
+[![Build Status](https://travis-ci.org/matei-tm/f-orm-m8.svg?branch=master)](https://travis-ci.org/matei-tm/f-orm-m8) 
+[![Codecov](https://img.shields.io/codecov/c/github/matei-tm/f-orm-m8.svg)](https://codecov.io/gh/matei-tm/f-orm-m8) 
+[![license](https://img.shields.io/github/license/matei-tm/f-orm-m8.svg)](https://github.com/matei-tm/f-orm-m8/blob/master/LICENSE)
 
 > f_orm_m8 - \fɔːrm meɪt\ It defines the core of **M8**, a tiny ORM framework with a simple set of annotations.
 
@@ -30,7 +35,11 @@ If you are looking for a ready to use implementation, check [Concrete implementa
 
 Promoted implementations:
 
-1. [f_orm_m8_sqlite](https://pub.dartlang.org/packages/f_orm_m8_sqlite) - a Sqlite fixture generator with mapping capability out of the box. It is stuffed with a Flutter example project as a showcase for the common use cases covered by **M8**. See [sources on github](https://github.com/matei-tm/f-orm-m8-sqlite)
+[f_orm_m8_sqlite](https://pub.dartlang.org/packages/f_orm_m8_sqlite) - a Sqlite fixture generator with mapping capability out of the box. It is stuffed with a Flutter example project as a showcase for the common use cases covered by **M8**. See [sources on github](https://github.com/matei-tm/f-orm-m8-sqlite)
+
+Promoted toolset:
+
+[Flutter ORM M8 Generator](https://marketplace.visualstudio.com/items?itemName=matei-tm.f-orm-m8-generator) - VS Code extension to generate models and database adapter based on [f_orm_m8_sqlite](https://pub.dartlang.org/packages/f_orm_m8_sqlite) framework for Flutter application
 
 ## Introduction
 

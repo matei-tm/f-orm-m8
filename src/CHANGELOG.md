@@ -1,5 +1,17 @@
 ## [Unreleased]
 
+## [0.8.0+3] - 2019-05-21
+
+### Added
+
+* Tests to cover 100% of the code
+* Integrate the codecov.io into CI pipeline
+
+### Changed
+
+* The test folder was reviewed and reorganized
+* The README.md was reviewed with small fixes
+
 ## [0.8.0+2] - 2019-05-03
 
 ### Changed
