@@ -7,39 +7,6 @@ import 'base_implementations/open/o01_entity.dart';
 import 'base_implementations/user_account.dart';
 
 void main() {
-  test('column metadata alteration', () {
-    expect(ColumnMetadata.ignore, 1);
-    expect(ColumnMetadata.primaryKey, 2);
-    expect(ColumnMetadata.unique, 4);
-    expect(ColumnMetadata.notNull, 8);
-    expect(ColumnMetadata.autoIncrement, 16);
-    expect(ColumnMetadata.indexed, 32);
-    expect(
-        ColumnMetadata.primaryKey |
-            ColumnMetadata.unique |
-            ColumnMetadata.autoIncrement,
-        22);
-  });
-
-  test('column composite constraints alteration', () {
-    var a = DataColumn("composite", compositeConstraints: [
-      CompositeConstraint(
-          name: "uq_account_entry",
-          constraintType: CompositeConstraintType.unique)
-    ]);
-    expect(a.name, "composite");
-    expect(a.compositeConstraints.length, 1);
-    expect(a.compositeConstraints.first.name, "uq_account_entry");
-    expect(a.compositeConstraints.first.constraintType,
-        CompositeConstraintType.unique);
-  });
-
-  test('table metadata alteration', () {
-    expect(TableMetadata.softDeletable, 1);
-    expect(TableMetadata.trackCreate, 2);
-    expect(TableMetadata.trackUpdate, 4);
-  });
-
   group('base classes definitions', () {
     test('open entity', () {
       O01Entity dbEntity = O01Entity();

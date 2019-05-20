@@ -14,7 +14,10 @@ class I02Entity implements DbEntity {
   ])
   int recordDate;
 
-  @DataColumn("is_deleted")
+  @DataColumn("is_deleted", compositeConstraints: [
+    CompositeConstraint(
+        name: "uq_entry_name", constraintType: CompositeConstraintType.unique)
+  ])
   int isDeleted;
 
   @DataColumn("entry_name", compositeConstraints: [
