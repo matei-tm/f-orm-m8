@@ -29,11 +29,20 @@ jobs:
       script: ./tool/travis.sh test
       env: PKG="src"
       dart: dev
+    - stage: test_coverage
+      name: "SDK: stable - DIR: src - TASKS: pub run test_coverage"
+      before_script: 
+        - pub global activate coverage
+      script: ./tool/travis_codecov.sh src
+      after_success: bash <(curl -s https://codecov.io/bash) -f lcov.info
+      env: PKG="src"
+      dart: stable
 
 stages:
   - analyzer_and_format
   - analyzer_and_format_stable
   - unit_test
+  - test_coverage
 
 # Only building master means that we don't run two builds for each pull request.
 branches:
