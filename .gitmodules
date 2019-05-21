@@ -1,0 +1,3 @@
+[submodule "f-orm-m8-sqlite"]
+	path = f-orm-m8-sqlite
+	url = https://github.com/matei-tm/f-orm-m8-sqlite
