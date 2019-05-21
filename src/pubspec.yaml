@@ -1,6 +1,6 @@
 name: f_orm_m8
 description: Dart package for ORM annotations. It defines ColumnMetadata, TableMetadata, DataTable, DataColumn annotations. Targeted audience is code generators
-version: 0.8.0+2
+version: 0.8.0+3
 author: Mircea-Tiberiu MATEI<matei_tm@yahoo.com>
 homepage: https://github.com/matei-tm/f-orm-m8
 
