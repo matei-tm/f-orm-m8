@@ -1,3 +1,6 @@
 [submodule "f-orm-m8-sqlite"]
 	path = f-orm-m8-sqlite
 	url = https://github.com/matei-tm/f-orm-m8-sqlite
+[submodule "vscode-f-orm-m8"]
+	path = vscode-f-orm-m8
+	url = https://github.com/matei-tm/vscode-f-orm-m8
