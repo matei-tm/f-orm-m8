@@ -45,6 +45,5 @@ git add .\vscode-f-orm-m8\
 Commit the changes: 
 
 ```shell
-cd ..
 git commit -am '#xxxx. Updating submodules. Closes #xxxx'
 ```
